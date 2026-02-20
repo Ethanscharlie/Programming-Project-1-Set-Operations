@@ -10,6 +10,19 @@ Required output / testability constraints (Parts 1 & 2)
 """
 
 
+def bitString(binary: list[bool]) -> str:
+    """
+    Convert a list of boolean values into a string.
+
+    Args:
+        binary (list[bool]): List of booleans.
+
+    Returns:
+        str: String of 0 or 1 seperated by spaces.
+    """
+    return " ".join(["1" if b else "0" for b in binary])
+
+
 """
 Let the universal set be ordered as:
 U = [a, b, c, d, e, f, g, h, i, j] (n = 10)
