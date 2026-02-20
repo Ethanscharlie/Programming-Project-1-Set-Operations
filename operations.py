@@ -1,30 +1,32 @@
 from typing import TypeAlias
 
-Set: TypeAlias = list[bool]
+SubSet: TypeAlias = list[str]
 Multiset: TypeAlias = dict[str, int]
+
+UNIVERSAL_SET = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
 
 ###################################################
 # PART 1
 ###################################################
 
 
-def complement(a: Set) -> Set:
+def complement(a: SubSet) -> list[bool]:
     pass
 
 
-def union(a: Set, b: Set) -> Set:
+def union(a: SubSet, b: SubSet) -> list[bool]:
     pass
 
 
-def intersection(a: Set, b: Set) -> Set:
+def intersection(a: SubSet, b: SubSet) -> list[bool]:
     pass
 
 
-def difference(a: Set, b: Set) -> Set:
+def difference(a: SubSet, b: SubSet) -> list[bool]:
     pass
 
 
-def symmetricDifference(a: Set, b: Set) -> Set:
+def symmetricDifference(a: SubSet, b: SubSet) -> list[bool]:
     pass
 
 
