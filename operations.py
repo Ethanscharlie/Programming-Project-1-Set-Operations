@@ -21,6 +21,7 @@ def complement(a: SubSet) -> list[bool]:
     #if a[i] == 0, then out[i] = 1 and vice versa
     return out[i]
 
+#union: a combination of the two sets
 def union(a: SubSet, b: SubSet) -> list[bool]:
     out = list[bool]
     out = [0,0,0,0,0,0,0,0,0,0,0,0]
