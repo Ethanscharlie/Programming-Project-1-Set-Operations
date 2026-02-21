@@ -1,3 +1,4 @@
+import operations
 import unittest
 
 """
@@ -7,7 +8,38 @@ Required output / testability constraints (Parts 1 & 2)
 • Include at least 2–3 representative test cases in your Results (not just one).
 • For Part 2, ensure both A and B have at least two elements with multiplicity > 1.
 • Clearly label outputs so ordinary set operations are not confused with multiset operations.
+
+The requirement is that your "results" (in your report) demonstrate correctness in a way a reader (or grader) can verify.
+
+For Part 1, show both:
+1. the bitstring / Boolean-array representation, and
+2. the element-name listing, for each required operation, and for 2–3 representative test cases.
+
+***That “expected output” is a format illustration — it does not mean verification is required to be manual.***
+
+How to avoid duplicating tests:
+
+You do not need to rewrite tests in two places. A good pattern is:
+1. Unit tests (JUnit / pytest):
+- assert correctness using structured comparisons (set equality, boolean arrays, counts, etc.)
+- no printing unless a test fails
+2. Demo / Results runner (a separate main() / demo()):
+- runs the same operations on 2–3 cases
+- prints the required labeled output (bits + element listing)
+
+To keep this DRY, define your test cases once (e.g., U, A, B) and reuse them in both the unit-test loop and the demo/results loop.
+
+Keep printing limited to the demo/results run:
+● label the operation
+● print bits/Booleans
+● print the element list (same line or next line)
 """
+
+SUBSET_A = ["a", "c", "e"]
+SUBSET_B = ["b", "c", "d"]
+SUBSET_C = ["f", "g"]
+SUBSET_D = ["h", "i"]
+SUBSET_EMPTY = []
 
 
 def bitString(binary: list[bool]) -> str:
@@ -45,8 +77,169 @@ Example result labeling (you should label similarly):
 
 
 class TestPartOne(unittest.TestCase):
-    def test_demo(self):
-        self.assertEqual(0, 1)
+    # ---- Complement ----
+    def test_complement_basic(self):
+        result = operations.complement(SUBSET_A)
+        expected = [
+            False,
+            True,
+            False,
+            True,
+            False,
+            True,
+            True,
+            True,
+            True,
+            True,
+            True,
+            True,
+        ]
+        self.assertEqual(result, expected)
+
+    def test_complement_empty(self):
+        result = operations.complement(SUBSET_EMPTY)
+        self.assertEqual(result, [True] * 12)
+
+    def test_complement_full(self):
+        result = operations.complement(operations.UNIVERSAL_SET)
+        self.assertEqual(result, [False] * 12)
+
+    # ---- Intersection ----
+    def test_intersection_overlap(self):
+        result = operations.intersection(SUBSET_A, SUBSET_B)
+        expected = [
+            False,
+            False,
+            True,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+        ]
+        self.assertEqual(result, expected)
+
+    def test_intersection_disjoint(self):
+        result = operations.intersection(SUBSET_C, SUBSET_D)
+        self.assertEqual(result, [False] * 12)
+
+    def test_intersection_with_empty(self):
+        result = operations.intersection(SUBSET_A, SUBSET_EMPTY)
+        self.assertEqual(result, [False] * 12)
+
+    # ---- Difference ----
+    def test_difference_basic(self):
+        result = operations.difference(SUBSET_A, SUBSET_B)
+        expected = [
+            True,
+            False,
+            False,
+            False,
+            True,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+        ]
+        self.assertEqual(result, expected)
+
+    def test_difference_disjoint(self):
+        result = operations.difference(SUBSET_C, SUBSET_D)
+        expected = [
+            False,
+            False,
+            False,
+            False,
+            False,
+            True,
+            True,
+            False,
+            False,
+            False,
+            False,
+            False,
+        ]
+        self.assertEqual(result, expected)
+
+    def test_difference_with_empty(self):
+        result = operations.difference(SUBSET_A, SUBSET_EMPTY)
+        expected = [
+            True,
+            False,
+            True,
+            False,
+            True,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+        ]
+        self.assertEqual(result, expected)
+
+    # ---- Symmetric Difference ----
+    def test_symmetric_difference_overlap(self):
+        result = operations.symmetricDifference(SUBSET_A, SUBSET_B)
+        expected = [
+            True,
+            True,
+            False,
+            True,
+            True,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+        ]
+        self.assertEqual(result, expected)
+
+    def test_symmetric_difference_disjoint(self):
+        result = operations.symmetricDifference(SUBSET_C, SUBSET_D)
+        expected = [
+            False,
+            False,
+            False,
+            False,
+            False,
+            True,
+            True,
+            True,
+            True,
+            False,
+            False,
+            False,
+        ]
+        self.assertEqual(result, expected)
+
+    def test_symmetric_difference_with_empty(self):
+        result = operations.symmetricDifference(SUBSET_A, SUBSET_EMPTY)
+        expected = [
+            True,
+            False,
+            True,
+            False,
+            True,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+        ]
+        self.assertEqual(result, expected)
 
 
 """
@@ -62,11 +255,6 @@ Then (show results as counts per element, clearly labeled):
 • A − B: a×1, c×1, e×2, g×0 (often omit ×0 in display)
 • A + B: a×3, b×2, c×1, e×4, g×5
 """
-
-
-class TestPartTwo(unittest.TestCase):
-    def test_demo(self):
-        self.assertEqual(0, 1)
 
 
 if __name__ == "__main__":
