@@ -131,6 +131,61 @@ class TestPartOne(unittest.TestCase):
         result = operations.intersection(SUBSET_A, SUBSET_EMPTY)
         self.assertEqual(result, [False] * 12)
 
+    # ---- Union ----
+    def test_union_overlap(self):
+        result = operations.union(SUBSET_A, SUBSET_B)
+        expected = [
+            True,  # a
+            True,  # b
+            True,  # c
+            True,  # d
+            True,  # e
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+        ]
+        self.assertEqual(result, expected)
+
+    def test_union_disjoint(self):
+        result = operations.union(SUBSET_C, SUBSET_D)
+        expected = [
+            False,
+            False,
+            False,
+            False,
+            False,
+            True,  # f
+            True,  # g
+            True,  # h
+            True,  # i
+            False,
+            False,
+            False,
+        ]
+        self.assertEqual(result, expected)
+
+    def test_union_with_empty(self):
+        result = operations.union(SUBSET_A, SUBSET_EMPTY)
+        expected = [
+            True,  # a
+            False,  # b
+            True,  # c
+            False,  # d
+            True,  # e
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+            False,
+        ]
+        self.assertEqual(result, expected)
+
     # ---- Difference ----
     def test_difference_basic(self):
         result = operations.difference(SUBSET_A, SUBSET_B)
