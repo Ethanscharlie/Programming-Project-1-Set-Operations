@@ -107,12 +107,12 @@ def getTheZeroes(multiSet : Multiset) -> Multiset:
     for element in UNIVERSAL_SET:
         if element in multiSet:
             out[element] = multiSet[element]
-        
     return out
 
 #Multiset union (A ∪ B): for each element, take the maximum count in A and B.
 def multisetUnion(a: Multiset, b: Multiset) -> Multiset:
     out = blankMultiSet()
+    
 
     zeroA = getTheZeroes(a)
     zeroB = getTheZeroes(b)
@@ -152,4 +152,4 @@ def multisetSum(a: Multiset, b: Multiset) -> Multiset:
 
     for element in out:
         out[element] = zeroA[element] + zeroB[element]
-    pass
+    return out
