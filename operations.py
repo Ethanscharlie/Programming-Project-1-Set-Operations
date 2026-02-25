@@ -62,7 +62,7 @@ def intersection(a: SubSet, b: SubSet) -> list[bool]:
 # difference: 
 # all elements in a but NOT b
 def difference(a: SubSet, b: SubSet) -> list[bool]:
-    out : list[bool] = [0,0,0,0,0,0,0,0,0,0,0,0]
+    out = blankList()
 
     boolA = setStrToBool(a)
     boolB = setStrToBool(b)
@@ -74,7 +74,7 @@ def difference(a: SubSet, b: SubSet) -> list[bool]:
 # symmetric difference:
 # all elements in one set but NOT the other
 def symmetricDifference(a: SubSet, b: SubSet) -> list[bool]:
-    out : list[bool] = [0,0,0,0,0,0,0,0,0,0,0,0]
+    out = blankList()
 
     boolA = setStrToBool(a)
     boolB = setStrToBool(b)
