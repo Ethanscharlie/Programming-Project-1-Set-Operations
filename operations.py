@@ -18,9 +18,10 @@ def blankList():
 def setStrToBool(subSet : SubSet) -> list[bool]:
     out = blankList()
 
-    for element in UNIVERSAL_SET:
-        out[element.index] = element in subSet
+    for index, element in enumerate(UNIVERSAL_SET):
+        out[index] = element in subSet
     return out
+
 
 #complement: everything outside of a in the universal set
 #ex: a = [a,b]
@@ -30,7 +31,7 @@ def complement(a: SubSet) -> list[bool]:
 
     boolA = setStrToBool(a)
 
-    for i in range(out.len()):
+    for i in range(len(out)):
         out[i] = not boolA[i]
     #if a[i] == 0, then out[i] = 1 and vice versa
     return out
@@ -42,7 +43,7 @@ def union(a: SubSet, b: SubSet) -> list[bool]:
     boolA = setStrToBool(a)
     boolB = setStrToBool(b)
 
-    for i in range(out.len()):
+    for i in range(len(out)):
         out[i] = (boolA[i] or boolB[i]) #self explanatory
     return out
 
@@ -55,7 +56,7 @@ def intersection(a: SubSet, b: SubSet) -> list[bool]:
     boolA = setStrToBool(a)
     boolB = setStrToBool(b)
 
-    for i in range(out.len()):
+    for i in range(len(out)):
         out[i] = (boolA[i] and boolB[i]) #self explanatory
     return out
 
@@ -67,7 +68,7 @@ def difference(a: SubSet, b: SubSet) -> list[bool]:
     boolA = setStrToBool(a)
     boolB = setStrToBool(b)
 
-    for i in range(out.len()):
+    for i in range(len(out)):
         out[i] = (boolA[i] and not boolB[i]) # a == 1 and b == 0
     return out
 
@@ -79,7 +80,7 @@ def symmetricDifference(a: SubSet, b: SubSet) -> list[bool]:
     boolA = setStrToBool(a)
     boolB = setStrToBool(b)
 
-    for i in range(out.len()):
+    for i in range(len(out)):
         out[i] = (boolA[i] ^ boolB[i]) # exclusive or
     return out
 
