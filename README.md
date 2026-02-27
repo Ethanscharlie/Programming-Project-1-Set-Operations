@@ -1,8 +1,8 @@
 # Programming-Project-1-Set-Operations
 Demonstrates various operations on sets and multisets. 
+
 To run, 
-1. Click on "<> Code" and then click on "Download ZIP".
-2. Extract the downloaded .zip folder and keep track of the folder's location.
+1. Once the .zip folder has been downloaded and extracted, please keep track of the folder's location.
 3. Run operationTest.py in the Command Prompt or chosen Python interpretor.
 
 # operations.py
