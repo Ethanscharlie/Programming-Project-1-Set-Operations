@@ -55,6 +55,22 @@ def bitString(binary: list[bool]) -> str:
     return " ".join(["1" if b else "0" for b in binary])
 
 
+def outputResults(operation: str, data:list[list[str]], result: list[bool] , expected: list[bool]):
+    # Print what we're doing
+    print("Performing " + operation + " operation on the following:")
+    # Print data as str list
+    for element in data:
+        print("                  " + element.__str__())
+    # Print data as bitstring
+    for element in data:
+        print("                  " + bitString(operations.setStrToBool(element)))
+    # Print results
+    print("                  -----------------------")
+    print("Expected Result:  " + bitString(expected))
+    print("Actual Result:    " + bitString(result))
+    print("--------------------------------------------")
+
+
 """
 Let the universal set be ordered as:
 U = [a, b, c, d, e, f, g, h, i, j] (n = 10)
@@ -78,39 +94,61 @@ Example result labeling (you should label similarly):
 
 class TestPartOne(unittest.TestCase):
     # ---- Complement ----
+    
+    #      u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #      a = [a,    c,    e                     ]
+    # NOT(a) = [   b,    d,    f, g, h, i, j, k, l]
     def test_complement_basic(self):
         result = operations.complement(SUBSET_A)
         expected = [
             False,
-            True,
+            True,  # b
             False,
-            True,
+            True,  # d
             False,
-            True,
-            True,
-            True,
-            True,
-            True,
-            True,
-            True,
+            True,  # f
+            True,  # g
+            True,  # h
+            True,  # i
+            True,  # j
+            True,  # k
+            True,  # l
         ]
         self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Complement", [SUBSET_A], result, expected)
 
+    #      u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #      e = [                                  ]
+    # NOT(e) = [a, b, c, d, e, f, g, h, i, j, k, l]
     def test_complement_empty(self):
         result = operations.complement(SUBSET_EMPTY)
-        self.assertEqual(result, [True] * 12)
+        expected = [True] * 12
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Complement", [SUBSET_EMPTY], result, expected)
 
+    #      u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    # NOT(u) = [                                  ]
     def test_complement_full(self):
         result = operations.complement(operations.UNIVERSAL_SET)
-        self.assertEqual(result, [False] * 12)
+        expected = [False] * 12
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Complement", [operations.UNIVERSAL_SET], result, expected)
 
     # ---- Intersection ----
+    
+    #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #   a = [a,    c,    e                     ]
+    #   b = [   b, c, d                        ]
+    # a∩b = [      c                           ]
     def test_intersection_overlap(self):
         result = operations.intersection(SUBSET_A, SUBSET_B)
         expected = [
             False,
             False,
-            True,
+            True,  # c
             False,
             False,
             False,
@@ -122,16 +160,37 @@ class TestPartOne(unittest.TestCase):
             False,
         ]
         self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Intersection", [SUBSET_A, SUBSET_B], result, expected)
 
+    #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #   c = [               f, g               ]
+    #   d = [                     h, i         ]
+    # c∩d = [                                  ]
     def test_intersection_disjoint(self):
         result = operations.intersection(SUBSET_C, SUBSET_D)
-        self.assertEqual(result, [False] * 12)
+        expected = [False] * 12
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Intersection", [SUBSET_C, SUBSET_D], result, expected)
 
+    #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #   a = [a,    c,    e                     ]
+    #   e = [                                  ]
+    # a∩e = [                                  ]
     def test_intersection_with_empty(self):
         result = operations.intersection(SUBSET_A, SUBSET_EMPTY)
-        self.assertEqual(result, [False] * 12)
+        expected = [False] * 12
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Intersection", [SUBSET_A, SUBSET_EMPTY], result, expected)
 
     # ---- Union ----
+    
+    #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #   a = [a,    c,    e                     ]
+    #   b = [   b, c, d                        ]
+    # a∪b = [a, b, c, d, e                     ]
     def test_union_overlap(self):
         result = operations.union(SUBSET_A, SUBSET_B)
         expected = [
@@ -149,7 +208,13 @@ class TestPartOne(unittest.TestCase):
             False,
         ]
         self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Union", [SUBSET_A, SUBSET_B], result, expected)
 
+    #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #   c = [               f, g               ]
+    #   d = [                     h, i         ]
+    # c∪d = [               f, g, h, i         ]
     def test_union_disjoint(self):
         result = operations.union(SUBSET_C, SUBSET_D)
         expected = [
@@ -167,14 +232,20 @@ class TestPartOne(unittest.TestCase):
             False,
         ]
         self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Union", [SUBSET_C, SUBSET_D], result, expected)
 
+    #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #   a = [a,    c,    e                     ]
+    #   e = [                                  ]
+    # a∪e = [a,    c,    e                     ]
     def test_union_with_empty(self):
         result = operations.union(SUBSET_A, SUBSET_EMPTY)
         expected = [
             True,  # a
-            False,  # b
+            False,
             True,  # c
-            False,  # d
+            False,
             True,  # e
             False,
             False,
@@ -185,16 +256,23 @@ class TestPartOne(unittest.TestCase):
             False,
         ]
         self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Union", [SUBSET_A, SUBSET_EMPTY], result, expected)
 
     # ---- Difference ----
+    
+    #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #   a = [a,    c,    e                     ]
+    #   b = [   b, c, d                        ]
+    # a-b = [a,          e                     ]
     def test_difference_basic(self):
         result = operations.difference(SUBSET_A, SUBSET_B)
         expected = [
-            True,
+            True,  # a
             False,
             False,
             False,
-            True,
+            True,  # e
             False,
             False,
             False,
@@ -204,7 +282,13 @@ class TestPartOne(unittest.TestCase):
             False,
         ]
         self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Difference", [SUBSET_A, SUBSET_B], result, expected)
 
+    #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #   c = [               f, g               ]
+    #   d = [                     h, i         ]
+    # c-d = [               f, g               ]
     def test_difference_disjoint(self):
         result = operations.difference(SUBSET_C, SUBSET_D)
         expected = [
@@ -213,8 +297,8 @@ class TestPartOne(unittest.TestCase):
             False,
             False,
             False,
-            True,
-            True,
+            True,  # f
+            True,  # g
             False,
             False,
             False,
@@ -222,15 +306,21 @@ class TestPartOne(unittest.TestCase):
             False,
         ]
         self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Difference", [SUBSET_C, SUBSET_D], result, expected)
 
+    #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #   a = [a,    c,    e                     ]
+    #   e = [                                  ]
+    # a-e = [a,    c,    e                     ]
     def test_difference_with_empty(self):
         result = operations.difference(SUBSET_A, SUBSET_EMPTY)
         expected = [
-            True,
+            True,  # a
             False,
-            True,
+            True,  # c
             False,
-            True,
+            True,  # e
             False,
             False,
             False,
@@ -240,16 +330,23 @@ class TestPartOne(unittest.TestCase):
             False,
         ]
         self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Difference", [SUBSET_A, SUBSET_EMPTY], result, expected)
 
     # ---- Symmetric Difference ----
+
+    #    u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #    a = [a,    c,    e                     ]
+    #    b = [   b, c, d                        ]
+    # a⊕b = [a, b,    d, e                     ]
     def test_symmetric_difference_overlap(self):
         result = operations.symmetricDifference(SUBSET_A, SUBSET_B)
         expected = [
-            True,
-            True,
+            True,  # a
+            True,  # b
             False,
-            True,
-            True,
+            True,  # d
+            True,  # e
             False,
             False,
             False,
@@ -259,7 +356,13 @@ class TestPartOne(unittest.TestCase):
             False,
         ]
         self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Symmetric Difference", [SUBSET_A, SUBSET_B], result, expected)
 
+    #    u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #    c = [               f, g               ]
+    #    d = [                     h, i         ]
+    # c⊕d = [               f, g, h, i         ]
     def test_symmetric_difference_disjoint(self):
         result = operations.symmetricDifference(SUBSET_C, SUBSET_D)
         expected = [
@@ -268,24 +371,30 @@ class TestPartOne(unittest.TestCase):
             False,
             False,
             False,
-            True,
-            True,
-            True,
-            True,
+            True,  # f
+            True,  # g
+            True,  # h
+            True,  # i
             False,
             False,
             False,
         ]
         self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Symmetric Difference", [SUBSET_C, SUBSET_D], result, expected)
 
+    #    u = [a, b, c, d, e, f, g, h, i, j, k, l]
+    #    a = [a,    c,    e                     ]
+    #    e = [                                  ]
+    # a⊕e = [a,    c,    e                     ]
     def test_symmetric_difference_with_empty(self):
         result = operations.symmetricDifference(SUBSET_A, SUBSET_EMPTY)
         expected = [
-            True,
+            True,  # a
             False,
-            True,
+            True,  # c
             False,
-            True,
+            True,  # e
             False,
             False,
             False,
@@ -295,6 +404,8 @@ class TestPartOne(unittest.TestCase):
             False,
         ]
         self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResults("Symmetric Difference", [SUBSET_A, SUBSET_EMPTY], result, expected)
 
 
 """
@@ -314,3 +425,4 @@ Then (show results as counts per element, clearly labeled):
 
 if __name__ == "__main__":
     unittest.main()
+
