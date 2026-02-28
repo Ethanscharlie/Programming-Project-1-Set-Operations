@@ -7,7 +7,7 @@
 - **Project:** Programming Project 1
 - **Team #:** 6
 - **Repo URL:** https://github.com/Ethanscharlie/Programming-Project-1-Set-Operations
-- **Submission Date:** ____
+- **Submission Date:** March 1st, 2026
 
 ## Evidence Link Conventions (choose one and be consistent)
 - Commits: `https://github.com/<org>/<repo>/commit/<hash>`
@@ -31,61 +31,51 @@
 
 ### Christian Miller (CosmicWatermeln)
 **Primary responsibilities**
-- [ ] <Responsibility 1>
-- [ ] <Responsibility 2>
+- [ ] Core Algorithm Implementation
 
 **Completed work (what you actually delivered)**
-- <Deliverable / change> — Evidence: <link 1>, <link 2>
-- <Deliverable / change> — Evidence: <link>
+- Core Algorithm Code — Evidence: `operations.py`
 
 **Collaboration / support**
-- Reviewed <PR# / area> — Evidence: <link>
-- Paired on <task> with <name> — Evidence: <meeting note link or PR comment link>
 
 ---
 
 ### Christopher Reynolds (ADDmonkey55)
 **Primary responsibilities**
-- [ ] <Responsibility 1>
-- [ ] <Responsibility 2>
+- [ ] Test and Verify Core Implementation
 
 **Completed work (what you actually delivered)**
-- <Deliverable / change> — Evidence: <link 1>, <link 2>
-- <Deliverable / change> — Evidence: <link>
+- Psuedocode — Evidence: `/docs/proj_1_pseudocode.md`
 
 **Collaboration / support**
-- Reviewed <PR# / area> — Evidence: <link>
-- Paired on <task> with <name> — Evidence: <meeting note link or PR comment link>
+- Paired on `/docs` folder structure with Ethan — Evidence: 
 
 ---
 
 ### Ethan J. Hadley (Ethanscharlie)
 **Primary responsibilities**
-- [ ] <Responsibility 1>
-- [ ] <Responsibility 2>
+- [ ] Test and Verify Core Implementation
 
 **Completed work (what you actually delivered)**
-- <Deliverable / change> — Evidence: <link 1>, <link 2>
-- <Deliverable / change> — Evidence: <link>
+- Created and Maintained Repository — Evidence: <link>
+- Code Tests — Evidence: `operationTests.py`
 
 **Collaboration / support**
-- Reviewed <PR# / area> — Evidence: <link>
-- Paired on <task> with <name> — Evidence: <meeting note link or PR comment link>
+- Paired on `/docs` folder structure with Christopher — Evidence: 
 
 ---
 
 ### Theodore Tran (TheoLT839)
 **Primary responsibilities**
-- [ ] <Responsibility 1>
-- [ ] <Responsibility 2>
+- [ ] Assembled Report
+- [ ] Create Deliverables (Run Instructions, Project Plan, and Contributions)
 
 **Completed work (what you actually delivered)**
-- <Deliverable / change> — Evidence: <link 1>, <link 2>
-- <Deliverable / change> — Evidence: <link>
+- UML Diagram — Evidence: `/docs/proj_1_UML,png`
+- Project Plan — Evidence: `/docs/proj_1_plan.docx`
+- Read Me File — Evidence: `README.md`
 
 **Collaboration / support**
-- Reviewed <PR# / area> — Evidence: <link>
-- Paired on <task> with <name> — Evidence: <meeting note link or PR comment link>
 
 ---
 
