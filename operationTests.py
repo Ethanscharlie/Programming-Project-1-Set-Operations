@@ -35,6 +35,10 @@ Keep printing limited to the demo/results run:
 ● print the element list (same line or next line)
 """
 
+##########################################################################################################
+#######################            PART 1            #####################################################
+##########################################################################################################
+
 SUBSET_A = ["a", "c", "e"]
 SUBSET_B = ["b", "c", "d"]
 SUBSET_C = ["f", "g"]
@@ -55,7 +59,7 @@ def bitString(binary: list[bool]) -> str:
     return " ".join(["1" if b else "0" for b in binary])
 
 
-def outputResults(operation: str, data:list[list[str]], result: list[bool] , expected: list[bool]):
+def outputResultsP1(operation: str, data:list[list[str]], result: list[bool] , expected: list[bool]):
     # Print what we're doing
     print("Performing " + operation + " operation on the following:")
     # Print data as str list
@@ -116,7 +120,7 @@ class TestPartOne(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Complement", [SUBSET_A], result, expected)
+        outputResultsP1("Complement", [SUBSET_A], result, expected)
 
     #      u = [a, b, c, d, e, f, g, h, i, j, k, l]
     #      e = [                                  ]
@@ -126,7 +130,7 @@ class TestPartOne(unittest.TestCase):
         expected = [True] * 12
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Complement", [SUBSET_EMPTY], result, expected)
+        outputResultsP1("Complement", [SUBSET_EMPTY], result, expected)
 
     #      u = [a, b, c, d, e, f, g, h, i, j, k, l]
     # NOT(u) = [                                  ]
@@ -135,7 +139,7 @@ class TestPartOne(unittest.TestCase):
         expected = [False] * 12
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Complement", [operations.UNIVERSAL_SET], result, expected)
+        outputResultsP1("Complement", [operations.UNIVERSAL_SET], result, expected)
 
     # ---- Intersection ----
     
@@ -161,7 +165,7 @@ class TestPartOne(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Intersection", [SUBSET_A, SUBSET_B], result, expected)
+        outputResultsP1("Intersection", [SUBSET_A, SUBSET_B], result, expected)
 
     #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
     #   c = [               f, g               ]
@@ -172,7 +176,7 @@ class TestPartOne(unittest.TestCase):
         expected = [False] * 12
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Intersection", [SUBSET_C, SUBSET_D], result, expected)
+        outputResultsP1("Intersection", [SUBSET_C, SUBSET_D], result, expected)
 
     #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
     #   a = [a,    c,    e                     ]
@@ -183,7 +187,7 @@ class TestPartOne(unittest.TestCase):
         expected = [False] * 12
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Intersection", [SUBSET_A, SUBSET_EMPTY], result, expected)
+        outputResultsP1("Intersection", [SUBSET_A, SUBSET_EMPTY], result, expected)
 
     # ---- Union ----
     
@@ -209,7 +213,7 @@ class TestPartOne(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Union", [SUBSET_A, SUBSET_B], result, expected)
+        outputResultsP1("Union", [SUBSET_A, SUBSET_B], result, expected)
 
     #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
     #   c = [               f, g               ]
@@ -233,7 +237,7 @@ class TestPartOne(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Union", [SUBSET_C, SUBSET_D], result, expected)
+        outputResultsP1("Union", [SUBSET_C, SUBSET_D], result, expected)
 
     #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
     #   a = [a,    c,    e                     ]
@@ -257,7 +261,7 @@ class TestPartOne(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Union", [SUBSET_A, SUBSET_EMPTY], result, expected)
+        outputResultsP1("Union", [SUBSET_A, SUBSET_EMPTY], result, expected)
 
     # ---- Difference ----
     
@@ -283,7 +287,7 @@ class TestPartOne(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Difference", [SUBSET_A, SUBSET_B], result, expected)
+        outputResultsP1("Difference", [SUBSET_A, SUBSET_B], result, expected)
 
     #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
     #   c = [               f, g               ]
@@ -307,7 +311,7 @@ class TestPartOne(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Difference", [SUBSET_C, SUBSET_D], result, expected)
+        outputResultsP1("Difference", [SUBSET_C, SUBSET_D], result, expected)
 
     #   u = [a, b, c, d, e, f, g, h, i, j, k, l]
     #   a = [a,    c,    e                     ]
@@ -331,7 +335,7 @@ class TestPartOne(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Difference", [SUBSET_A, SUBSET_EMPTY], result, expected)
+        outputResultsP1("Difference", [SUBSET_A, SUBSET_EMPTY], result, expected)
 
     # ---- Symmetric Difference ----
 
@@ -357,7 +361,7 @@ class TestPartOne(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Symmetric Difference", [SUBSET_A, SUBSET_B], result, expected)
+        outputResultsP1("Symmetric Difference", [SUBSET_A, SUBSET_B], result, expected)
 
     #    u = [a, b, c, d, e, f, g, h, i, j, k, l]
     #    c = [               f, g               ]
@@ -381,7 +385,7 @@ class TestPartOne(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Symmetric Difference", [SUBSET_C, SUBSET_D], result, expected)
+        outputResultsP1("Symmetric Difference", [SUBSET_C, SUBSET_D], result, expected)
 
     #    u = [a, b, c, d, e, f, g, h, i, j, k, l]
     #    a = [a,    c,    e                     ]
@@ -405,11 +409,48 @@ class TestPartOne(unittest.TestCase):
         ]
         self.assertEqual(result, expected)
         # OUTPUT TEST RESULTS:
-        outputResults("Symmetric Difference", [SUBSET_A, SUBSET_EMPTY], result, expected)
+        outputResultsP1("Symmetric Difference", [SUBSET_A, SUBSET_EMPTY], result, expected)
+
+
+
+
+
+
+
+##########################################################################################################
+#######################            PART 2            #####################################################
+##########################################################################################################
+
+
+# u =      a   b   c   d   e   f   g   h   i   j   k   l
+# A =     {a:2     c:3     e:1                            }
+# B =     {b:5     c:2 d:3                                }
+# C =     {                    f:7 g:2                    }
+# D =     {                            h:3 i:4            }
+# EMPTY = {                                               }
+MULTISET_A = {"a":2, "c":3, "e":1}
+MULTISET_B = {"b":5, "c":2, "d":3}
+MULTISET_C = {"f":7, "g":2}
+MULTISET_D = {"h":3, "i":4}
+MULTISET_EMPTY = {}
+
+def outputResultsP2(operation: str, data:list[dict], result: dict , expected: dict):
+    pass
+    # Print what we're doing
+    print("Performing " + operation + " operation on the following:")
+    # Print data
+    for element in data:
+        print("                  " + operations.getTheZeroes(element).__str__())
+    # Print results
+    print("Expected Result:  " + expected.__str__())
+    print("Actual Result:    " + result.__str__())
+    print("--------------------------------------------")
+
+
 
 
 """
-Concrete example (no code)
+Concrete example
 
 Using the same U = [a, b, c, d, e, f, g, h, i, j], suppose:
 A = {a, a, c, e, e, e, g} = {a×2, c×1, e×3, g×1}
@@ -421,6 +462,319 @@ Then (show results as counts per element, clearly labeled):
 • A − B: a×1, c×1, e×2, g×0 (often omit ×0 in display)
 • A + B: a×3, b×2, c×1, e×4, g×5
 """
+
+
+
+# Multiset union (A ∪ B): for each element, take the maximum count in A and B.
+# Multiset intersection (A ∩ B): for each element, take the minimum count in A and B.
+# Multiset difference (A − B): for each element, subtract B’s count from A’s count, but not below 0.
+# Multiset sum (A + B): for each element, add the two counts.
+class TestPartTwo(unittest.TestCase):
+
+    # ---- Intersection ----
+    
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # A =     {a:2     c:3     e:1                            }
+    # B =     {    b:5 c:2 d:3                                }
+    # A∩B =   {        c:2                                    }
+    def test_intersection_overlap(self):
+        result = operations.multisetIntersection(MULTISET_A, MULTISET_B)
+        expected = {
+            "a":0,
+            "b":0,
+            "c":2,
+            "d":0,
+            "e":0,
+            "f":0,
+            "g":0,
+            "h":0,
+            "i":0,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Intersection", [MULTISET_A, MULTISET_B], result, expected)
+
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # C =     {                    f:7 g:2                    }
+    # D =     {                            h:3 i:4            }
+    # C∩D =   {                                               }
+    def test_intersection_disjoint(self):
+        result = operations.multisetIntersection(MULTISET_C, MULTISET_D)
+        expected = {
+            "a":0,
+            "b":0,
+            "c":0,
+            "d":0,
+            "e":0,
+            "f":0,
+            "g":0,
+            "h":0,
+            "i":0,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Intersection", [MULTISET_C, MULTISET_D], result, expected)
+
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # A =     {a:2     c:3     e:1                            }
+    # EMPTY = {                                               }
+    # A∩E =   {                                               }
+    def test_intersection_with_empty(self):
+        result = operations.multisetIntersection(MULTISET_A, MULTISET_EMPTY)
+        expected = {
+            "a":0,
+            "b":0,
+            "c":0,
+            "d":0,
+            "e":0,
+            "f":0,
+            "g":0,
+            "h":0,
+            "i":0,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Intersection", [MULTISET_A, MULTISET_EMPTY], result, expected)
+
+    # ---- Union ----
+    
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # A =     {a:2     c:3     e:1                            }
+    # B =     {    b:5 c:2 d:3                                }
+    # A∪B =   {a:2 b:5 c:3 d:3 e:1                            }
+    def test_union_overlap(self):
+        result = operations.multisetUnion(MULTISET_A, MULTISET_B)
+        expected = {
+            "a":2,
+            "b":5,
+            "c":3,
+            "d":3,
+            "e":1,
+            "f":0,
+            "g":0,
+            "h":0,
+            "i":0,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Union", [MULTISET_A, MULTISET_B], result, expected)
+
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # C =     {                    f:7 g:2                    }
+    # D =     {                            h:3 i:4            }
+    # C∪D =   {                    f:7 g:2 h:3 i:4            }
+    def test_union_disjoint(self):
+        result = operations.multisetUnion(MULTISET_C, MULTISET_D)
+        expected = {
+            "a":0,
+            "b":0,
+            "c":0,
+            "d":0,
+            "e":0,
+            "f":7,
+            "g":2,
+            "h":3,
+            "i":4,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Union", [MULTISET_C, MULTISET_D], result, expected)
+
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # A =     {a:2     c:3     e:1                            }
+    # EMPTY = {                                               }
+    # A∪E =   {a:2     c:3     e:1                            }
+    def test_union_with_empty(self):
+        result = operations.multisetUnion(MULTISET_A, MULTISET_EMPTY)
+        expected = {
+            "a":2,
+            "b":0,
+            "c":3,
+            "d":0,
+            "e":1,
+            "f":0,
+            "g":0,
+            "h":0,
+            "i":0,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Union", [MULTISET_A, MULTISET_EMPTY], result, expected)
+
+    # ---- Difference ----
+    
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # A =     {a:2     c:3     e:1                            }
+    # B =     {    b:5 c:2 d:3                                }
+    # A-B =   {a:2     c:1     e:1                            }
+    def test_difference_basic(self):
+        result = operations.multisetDifference(MULTISET_A, MULTISET_B)
+        expected = {
+            "a":2,
+            "b":0,
+            "c":1,
+            "d":0,
+            "e":1,
+            "f":0,
+            "g":0,
+            "h":0,
+            "i":0,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Difference", [MULTISET_A, MULTISET_B], result, expected)
+
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # C =     {                    f:7 g:2                    }
+    # D =     {                            h:3 i:4            }
+    # C-D =   {                    f:7 g:2                    }
+    def test_difference_disjoint(self):
+        result = operations.multisetDifference(MULTISET_C, MULTISET_D)
+        expected = {
+            "a":0,
+            "b":0,
+            "c":0,
+            "d":0,
+            "e":0,
+            "f":7,
+            "g":2,
+            "h":0,
+            "i":0,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Difference", [MULTISET_C, MULTISET_D], result, expected)
+
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # A =     {a:2     c:3     e:1                            }
+    # EMPTY = {                                               }
+    # A-E =   {a:2     c:3     e:1                            }
+    def test_difference_with_empty(self):
+        result = operations.multisetDifference(MULTISET_A, MULTISET_EMPTY)
+        expected = {
+            "a":2,
+            "b":0,
+            "c":3,
+            "d":0,
+            "e":1,
+            "f":0,
+            "g":0,
+            "h":0,
+            "i":0,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Difference", [MULTISET_A, MULTISET_EMPTY], result, expected)
+
+    # ---- Sum ----
+
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # A =     {a:2     c:3     e:1                            }
+    # B =     {    b:5 c:2 d:3                                }
+    # A+B =   {a:2 b:5 c:5 d:3 e:1                            }
+    def test_symmetric_difference_overlap(self):
+        result = operations.multisetSum(MULTISET_A, MULTISET_B)
+        expected = {
+            "a":2,
+            "b":5,
+            "c":5,
+            "d":3,
+            "e":1,
+            "f":0,
+            "g":0,
+            "h":0,
+            "i":0,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Sum", [MULTISET_A, MULTISET_B], result, expected)
+
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # C =     {                    f:7 g:2                    }
+    # D =     {                            h:3 i:4            }
+    # C+D =   {                    f:7 g:2 h:3 i:4            }
+    def test_symmetric_difference_disjoint(self):
+        result = operations.multisetSum(MULTISET_C, MULTISET_D)
+        expected = {
+            "a":0,
+            "b":0,
+            "c":0,
+            "d":0,
+            "e":0,
+            "f":7,
+            "g":2,
+            "h":3,
+            "i":4,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Sum", [MULTISET_C, MULTISET_D], result, expected)
+
+    #          a   b   c   d   e   f   g   h   i   j   k   l
+    # A =     {a:2     c:3     e:1                            }
+    # EMPTY = {                                               }
+    # A+E =   {a:2     c:3     e:1                            }
+    def test_symmetric_difference_with_empty(self):
+        result = operations.multisetSum(MULTISET_A, MULTISET_EMPTY)
+        expected = {
+            "a":2,
+            "b":0,
+            "c":3,
+            "d":0,
+            "e":1,
+            "f":0,
+            "g":0,
+            "h":0,
+            "i":0,
+            "j":0,
+            "k":0,
+            "l":0
+        }
+        self.assertEqual(result, expected)
+        # OUTPUT TEST RESULTS:
+        outputResultsP2("Sum", [MULTISET_A, MULTISET_EMPTY], result, expected)
+
+
+
+
+
+
+
+
+        
 
 
 if __name__ == "__main__":
