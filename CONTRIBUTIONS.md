@@ -1,1 +1,105 @@
-Hi Mom!
+# CONTRIBUTIONS.md
+
+---
+
+## Team Info
+- **Course / Section:** CS 2430-502
+- **Project:** Programming Project 1
+- **Team #:** 6
+- **Repo URL:** https://github.com/Ethanscharlie/Programming-Project-1-Set-Operations
+- **Submission Date:** ____
+
+## Evidence Link Conventions (choose one and be consistent)
+- Commits: `https://github.com/<org>/<repo>/commit/<hash>`
+- PRs: `https://github.com/<org>/<repo>/pull/<num>`
+- Issues: `https://github.com/<org>/<repo>/issues/<num>`
+- Files: `/<path/from/repo/root>`
+- Meeting notes: `/docs/meetings/YYYY-MM-DD.md` (or similar)
+- Screenshots/logs: `/docs/evidence/<name>.png` / `/docs/evidence/<name>.txt`
+
+---
+
+## Contribution Summary (1–3 bullets each)
+- **Member A:** <high-level summary>
+- **Member B:** <high-level summary>
+- **Member C:** <high-level summary>
+- **Member D:** <high-level summary or “No verified contributions yet”>
+
+---
+
+## Detailed Contributions (by team member)
+
+### Christian Miller (CosmicWatermeln)
+**Primary responsibilities**
+- [ ] <Responsibility 1>
+- [ ] <Responsibility 2>
+
+**Completed work (what you actually delivered)**
+- <Deliverable / change> — Evidence: <link 1>, <link 2>
+- <Deliverable / change> — Evidence: <link>
+
+**Collaboration / support**
+- Reviewed <PR# / area> — Evidence: <link>
+- Paired on <task> with <name> — Evidence: <meeting note link or PR comment link>
+
+---
+
+### Christopher Reynolds (ADDmonkey55)
+**Primary responsibilities**
+- [ ] <Responsibility 1>
+- [ ] <Responsibility 2>
+
+**Completed work (what you actually delivered)**
+- <Deliverable / change> — Evidence: <link 1>, <link 2>
+- <Deliverable / change> — Evidence: <link>
+
+**Collaboration / support**
+- Reviewed <PR# / area> — Evidence: <link>
+- Paired on <task> with <name> — Evidence: <meeting note link or PR comment link>
+
+---
+
+### Ethan J. Hadley (Ethanscharlie)
+**Primary responsibilities**
+- [ ] <Responsibility 1>
+- [ ] <Responsibility 2>
+
+**Completed work (what you actually delivered)**
+- <Deliverable / change> — Evidence: <link 1>, <link 2>
+- <Deliverable / change> — Evidence: <link>
+
+**Collaboration / support**
+- Reviewed <PR# / area> — Evidence: <link>
+- Paired on <task> with <name> — Evidence: <meeting note link or PR comment link>
+
+---
+
+### Theodore Tran (TheoLT839)
+**Primary responsibilities**
+- [ ] <Responsibility 1>
+- [ ] <Responsibility 2>
+
+**Completed work (what you actually delivered)**
+- <Deliverable / change> — Evidence: <link 1>, <link 2>
+- <Deliverable / change> — Evidence: <link>
+
+**Collaboration / support**
+- Reviewed <PR# / area> — Evidence: <link>
+- Paired on <task> with <name> — Evidence: <meeting note link or PR comment link>
+
+---
+
+## Cross-Checks (optional but recommended)
+- **Test ownership:** who wrote/maintained which tests? Evidence: <links>
+- **Results/demo run output:** who produced the labeled outputs/screenshots for the report? Evidence: <links>
+- **Final integration:** who merged final changes and verified build/run instructions? Evidence: <links>
+
+---
+
+## Attestation
+Each team member should add initials next to their name once reviewed.
+
+- Member A: ____  Date: ____
+- Member B: ____  Date: ____
+- Member C: ____  Date: ____
+- Member D: ____  Date: ____
