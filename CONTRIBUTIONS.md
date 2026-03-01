@@ -88,6 +88,6 @@
 Each team member should add initials next to their name once reviewed.
 
 - Christian: CM  Date: Mar 1 2026
-- Christopher: CR  Date: ____
+- Christopher: CR  Date: Mar 1 2026
 - Ethan: EH  Date: Mar 1 2026
 - Theodore: ____  Date: ____
