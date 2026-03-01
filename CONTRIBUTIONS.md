@@ -62,7 +62,7 @@
 
 **Collaboration / support**
 - Paired on verification tests with Christopher — Evidence: `operationTests.py`
-- Paired on doc comments with Christian — Evidence:  `https://github.com/Ethanscharlie/Programming-Project-1-Set-Operations/commit/d800d4cfd70c8c2c7bbd95e53f909691e10aa335`
+- Paired on doc comments with Christian — Evidence: `https://github.com/Ethanscharlie/Programming-Project-1-Set-Operations/commit/d800d4cfd70c8c2c7bbd95e53f909691e10aa335`
 
 ---
 
@@ -90,4 +90,4 @@ Each team member should add initials next to their name once reviewed.
 - Christian: CM  Date: Mar 1 2026
 - Christopher: CR  Date: Mar 1 2026
 - Ethan: EH  Date: Mar 1 2026
-- Theodore: ____  Date: ____
+- Theodore: TT  Date: Mar 1 2026
