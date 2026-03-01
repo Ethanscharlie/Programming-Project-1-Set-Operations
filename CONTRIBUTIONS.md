@@ -14,12 +14,15 @@
 ## Contribution Summary (1–3 bullets each)
 **Christian:**
 - Wrote Core Algorithm Implementation
+
 **Christopher:** 
 - Wrote Pseudocode
 - Wrote Verification Tests
+
 **Ethan:** 
 - Created and Maintained Repository
 - Wrote Verification Tests
+
 **Theodore:** <high-level summary or “No verified contributions yet”>
 - Wrote Report and other Supporting Devlierables
 
