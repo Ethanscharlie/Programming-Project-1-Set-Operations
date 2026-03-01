@@ -9,6 +9,8 @@ SUBSET_C = ["f", "g"]
 SUBSET_D = ["h", "i"]
 SUBSET_EMPTY = []
 
+# Authors: Christopher Reynolds & Ethan J. Hadley
+
 
 def bitString(binary: list[bool]) -> str:
     """
