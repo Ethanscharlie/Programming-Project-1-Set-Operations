@@ -89,5 +89,5 @@ Each team member should add initials next to their name once reviewed.
 
 - Christian: ____  Date: ____
 - Christopher: ____  Date: ____
-- Ethan: ____  Date: ____
+- Ethan: EH  Date: Mar 1 2026
 - Theodore: ____  Date: ____
