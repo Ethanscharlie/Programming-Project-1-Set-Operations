@@ -23,8 +23,8 @@
 - Created and Maintained Repository
 - Wrote Verification Tests
 
-**Theodore:** <high-level summary or “No verified contributions yet”>
-- Wrote Report and other Supporting Devlierables
+**Theodore:**
+- Wrote Report and other Supporting Deliverables
 
 ---
 
@@ -62,6 +62,7 @@
 
 **Collaboration / support**
 - Paired on verification tests with Christopher — Evidence: `operationTests.py`
+- Paired on doc comments with Christian — Evidence:  `https://github.com/Ethanscharlie/Programming-Project-1-Set-Operations/commit/d800d4cfd70c8c2c7bbd95e53f909691e10aa335`
 
 ---
 
@@ -74,13 +75,12 @@
 - UML Diagram — Evidence: `/docs/proj_1_UML,png`
 - Project Plan — Evidence: `/docs/proj_1_plan.docx`
 - Read Me File — Evidence: `README.md`
+- Contributions — Evidence: `CONTRIBUTIONS.md`
 
 ---
 
 ## Cross-Checks (optional but recommended)
 - **Test ownership:** Ethan & Christopher - Evidence: `https://github.com/Ethanscharlie/Programming-Project-1-Set-Operations/commit/855663fe223a71be8a88d541ca75f973e97245d5`, `https://github.com/Ethanscharlie/Programming-Project-1-Set-Operations/commit/f50ca38e5799f0296d869a234ba6a55c15167e4b`, `https://github.com/Ethanscharlie/Programming-Project-1-Set-Operations/commit/8e99724b77431a41b4c2bd7c792c4df2d56793f8`
-- **Results/demo run output:** who produced the labeled outputs/screenshots for the report? Evidence: <links>
-- **Final integration:** who merged final changes and verified build/run instructions? Evidence: <links>
 
 ---
 
