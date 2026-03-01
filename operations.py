@@ -5,16 +5,17 @@ Multiset: TypeAlias = dict[str, int]
 
 UNIVERSAL_SET = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"]
 
+#Author: Christian Miller
 ###################################################
 # PART 1
 ###################################################
 
-#code duplication thing
+# Create a blank list for all methods in part 1
 def blankList():
     out : list[bool] = [0,0,0,0,0,0,0,0,0,0,0,0]
     return out
 
-#converts a subset into a list of booleans
+# Converts the input subset into a list of booleans
 def setStrToBool(subSet : SubSet) -> list[bool]:
     out = blankList()
 
@@ -22,10 +23,8 @@ def setStrToBool(subSet : SubSet) -> list[bool]:
         out[index] = element in subSet
     return out
 
-
-#complement: everything outside of a in the universal set
-#ex: a = [a,b]
-# complement(a) = [c, d, e, f, g, h, i, j, k] 
+# Performs the complement operation on the subset A
+# Returns: a list[bool] with the operation performed
 def complement(a: SubSet) -> list[bool]:
     out = blankList()
 
@@ -36,7 +35,8 @@ def complement(a: SubSet) -> list[bool]:
     #if a[i] == 0, then out[i] = 1 and vice versa
     return out
 
-#union: a combination of the two sets
+# Performs the union operation on the subsets A and B
+# Returns: a list[bool] with the operation performed
 def union(a: SubSet, b: SubSet) -> list[bool]:
     out = blankList()
 
@@ -48,8 +48,8 @@ def union(a: SubSet, b: SubSet) -> list[bool]:
     return out
 
 
-# intersection: 
-# all elements shared between sets a and b
+# Performs the intersection operation on the subsets A and B
+# Returns: a list[bool] with the operation performed
 def intersection(a: SubSet, b: SubSet) -> list[bool]:
     out = blankList()
 
@@ -57,11 +57,11 @@ def intersection(a: SubSet, b: SubSet) -> list[bool]:
     boolB = setStrToBool(b)
 
     for i in range(len(out)):
-        out[i] = (boolA[i] and boolB[i]) #self explanatory
+        out[i] = (boolA[i] and boolB[i])
     return out
 
-# difference: 
-# all elements in a but NOT b
+# Performs the difference operation on the subsets A and B
+# Returns: a list[bool] with the operation performed
 def difference(a: SubSet, b: SubSet) -> list[bool]:
     out = blankList()
 
@@ -72,8 +72,8 @@ def difference(a: SubSet, b: SubSet) -> list[bool]:
         out[i] = (boolA[i] and not boolB[i]) # a == 1 and b == 0
     return out
 
-# symmetric difference:
-# all elements in one set but NOT the other
+# Performs the difference operation symmetrically on the subsets A and B
+# Returns: a list[bool] with the operation performed
 def symmetricDifference(a: SubSet, b: SubSet) -> list[bool]:
     out = blankList()
 
@@ -93,6 +93,7 @@ def symmetricDifference(a: SubSet, b: SubSet) -> list[bool]:
 #A multiset (or mset or bag) is an unordered collection of elements where an element
 #can occur as a member more than once.
 
+# Create a blank Multiset for all methods in part 2
 def blankMultiSet() -> Multiset:
     out : Multiset = {
       "a" : 0, "b" : 0, "c" : 0, "d" : 0, "e" : 0,
@@ -101,7 +102,10 @@ def blankMultiSet() -> Multiset:
       }
     return out
 
-#its easier this way imo
+# Takes an input Multiset and returns a similar Multiset with
+# values of zero explicitly specified.
+# ex input : {a : 1}
+#    output: {a : 1, b : 0, c : 0, d : 0....etc.}
 def getTheZeroes(multiSet : Multiset) -> Multiset:
     out = blankMultiSet()
 
@@ -110,7 +114,9 @@ def getTheZeroes(multiSet : Multiset) -> Multiset:
             out[element] = multiSet[element]
     return out
 
-#Multiset union (A ∪ B): for each element, take the maximum count in A and B.
+# Performs the given operation on two Multisets
+# Multiset union (A ∪ B): for each element, take the maximum count in A and B.
+# Returns: a Multiset with the operation applied
 def multisetUnion(a: Multiset, b: Multiset) -> Multiset:
     out = blankMultiSet()
     
@@ -122,7 +128,9 @@ def multisetUnion(a: Multiset, b: Multiset) -> Multiset:
         out[element] = max(zeroA[element], zeroB[element])
     return out
 
-#Multiset intersection (A ∩ B): for each element, take the minimum count in A and B.
+# Performs the given operation on two Multisets
+# Multiset intersection (A ∩ B): for each element, take the minimum count in A and B.
+# Returns: a Multiset with the operation applied
 def multisetIntersection(a: Multiset, b: Multiset) -> Multiset:
     out = blankMultiSet()
 
@@ -133,7 +141,9 @@ def multisetIntersection(a: Multiset, b: Multiset) -> Multiset:
         out[element] = min(zeroA[element], zeroB[element])
     return out
 
-#Multiset difference (A − B): for each element, subtract B’s count from A’s count, but not below 0.
+# Performs the given operation on two Multisets
+# Multiset difference (A − B): for each element, subtract B’s count from A’s count, but not below 0.
+# Returns: a Multiset with the operation applied
 def multisetDifference(a: Multiset, b: Multiset) -> Multiset:
     out = blankMultiSet()
 
@@ -144,7 +154,9 @@ def multisetDifference(a: Multiset, b: Multiset) -> Multiset:
         out[element] = max(0, zeroA[element] - zeroB[element])
     return out
 
-#Multiset sum (A + B): for each element, add the two counts.
+# Performs the given operation on two Multisets
+# Multiset sum (A + B): for each element, add the two counts.
+# Returns: a Multiset with the operation applied
 def multisetSum(a: Multiset, b: Multiset) -> Multiset:
     out = blankMultiSet()
 
