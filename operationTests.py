@@ -612,7 +612,7 @@ class TestPartTwo(unittest.TestCase):
     # A =     {a:2     c:3     e:1                            }
     # B =     {    b:5 c:2 d:3                                }
     # A+B =   {a:2 b:5 c:5 d:3 e:1                            }
-    def test_symmetric_difference_overlap(self):
+    def test_sum_overlap(self):
         result = operations.multisetSum(MULTISET_A, MULTISET_B)
         expected = {
             "a": 2,
@@ -635,7 +635,7 @@ class TestPartTwo(unittest.TestCase):
     # C =     {                    f:7 g:2                    }
     # D =     {                            h:3 i:4            }
     # C+D =   {                    f:7 g:2 h:3 i:4            }
-    def test_symmetric_difference_disjoint(self):
+    def test_sum_disjoint(self):
         result = operations.multisetSum(MULTISET_C, MULTISET_D)
         expected = {
             "a": 0,
@@ -658,7 +658,7 @@ class TestPartTwo(unittest.TestCase):
     # A =     {a:2     c:3     e:1                            }
     # EMPTY = {                                               }
     # A+E =   {a:2     c:3     e:1                            }
-    def test_symmetric_difference_with_empty(self):
+    def test_sum_with_empty(self):
         result = operations.multisetSum(MULTISET_A, MULTISET_EMPTY)
         expected = {
             "a": 2,
