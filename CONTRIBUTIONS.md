@@ -11,7 +11,7 @@
 
 ---
 
-## Contribution Summary (1–3 bullets each)
+## Contribution Summary
 **Christian:**
 - Wrote Core Algorithm Implementation
 
@@ -79,7 +79,7 @@
 
 ---
 
-## Cross-Checks (optional but recommended)
+## Cross-Checks
 - **Test ownership:** Ethan & Christopher - Evidence: `https://github.com/Ethanscharlie/Programming-Project-1-Set-Operations/commit/855663fe223a71be8a88d541ca75f973e97245d5`, `https://github.com/Ethanscharlie/Programming-Project-1-Set-Operations/commit/f50ca38e5799f0296d869a234ba6a55c15167e4b`, `https://github.com/Ethanscharlie/Programming-Project-1-Set-Operations/commit/8e99724b77431a41b4c2bd7c792c4df2d56793f8`
 
 ---
